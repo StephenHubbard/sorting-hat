@@ -13,9 +13,12 @@ class App extends React.Component {
     this.state = {
       house: null,
       mainColor: '',
-      secondaryColor: ''
+      secondaryColor: '',
+      audio: '',
     }
     this.updateHouseInfo = this.updateHouseInfo.bind(this)
+    this.playAudio = this.playAudio.bind(this)
+    this.playHuffleAudio = this.playHuffleAudio.bind(this)
   }
 
   updateHouseInfo(newState) {
@@ -49,7 +52,16 @@ class App extends React.Component {
       src: ['/hufflepuff.mp4']
     })
     sound.play();
+    // console.log(this.state.audio)
   };
+
+  playAudio() {
+    var sound = new Howl({
+      src: [`${this.state.audio}`]
+    })
+    sound.play();
+    console.log("played")
+  }
 
 
   
@@ -89,6 +101,7 @@ class App extends React.Component {
                 <House
                   mainColor={this.state.mainColor}
                   secondaryColor={this.state.secondaryColor}
+                  audio={this.state.audio}
                 />
               )}
             />

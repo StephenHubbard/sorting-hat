@@ -80,6 +80,27 @@ p {
   text-align: left;
 }
 
+.audio {
+  margin: 3rem 3rem;
+  transition: .3s;
+  color: #B1232A;
+  text-decoration: none;
+  font-style: italic;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  width: 15.6rem;
+  padding: .3rem;
+  border: 1px solid #B1232A;
+  border-radius: 7px;
+}
+
+audio:hover {
+  color: #FF0000;
+  border-color: #FF0000;
+  background: #0f0f0f12;
+}
+
 @media (max-width: 1000px) {
   header {
     margin-left: calc(100vw / 2048 * -1)
