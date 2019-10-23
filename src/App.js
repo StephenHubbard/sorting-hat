@@ -26,13 +26,29 @@ class App extends React.Component {
     window.location = '/#/'
   }
 
-  playAudio() {
+  playGryffAudio() {
     var sound = new Howl({
-      src: ['/smb_gameover.wav']
+      src: ['/gryffindor.mp4']
     })
     sound.play();
-    console.log(sound)
-    console.log(sound.src)
+  };
+  playSlythAudio() {
+    var sound = new Howl({
+      src: ['/slytherin.mp4']
+    })
+    sound.play();
+  };
+  playRavenAudio() {
+    var sound = new Howl({
+      src: ['/ravenclaw.mp4']
+    })
+    sound.play();
+  };
+  playHuffleAudio() {
+    var sound = new Howl({
+      src: ['/hufflepuff.mp4']
+    })
+    sound.play();
   };
 
 
@@ -41,8 +57,10 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div className="App">
-        <button onClick={this.playAudio}>Play</button>
-
+        <button onClick={this.playGryffAudio}>Gryffindor</button>
+        <button onClick={this.playSlythAudio}>Slytherin</button>
+        <button onClick={this.playRavenAudio}>Ravenclaw</button>
+        <button onClick={this.playHuffleAudio}>Hufflepuff</button>
           <header onClick={() => this.navigateHome()}>
             <h1>Hoggy Hoggy Hogwarts</h1>
             <img
