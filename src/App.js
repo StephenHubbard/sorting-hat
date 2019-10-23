@@ -5,6 +5,7 @@ import GreatHall from './components/GreatHall'
 import About from './components/About'
 import House from './components/House'
 import MissingPage from './components/404'
+import {Howl} from 'howler'
 
 class App extends React.Component {
   constructor() {
@@ -26,15 +27,21 @@ class App extends React.Component {
   }
 
   playAudio() {
-    var audio = new Audio('./smb_gameover.wav')
-    audio.play();
-  }
+    var sound = new Howl({
+      src: ['/smb_gameover.wav']
+    })
+    sound.play();
+    console.log(sound)
+    console.log(sound.src)
+  };
+
+
   
   render() {
     return (
       <HashRouter>
         <div className="App">
-        <button onClick={() => this.playAudio()}>Play</button>
+        <button onClick={this.playAudio}>Play</button>
 
           <header onClick={() => this.navigateHome()}>
             <h1>Hoggy Hoggy Hogwarts</h1>
