@@ -16,16 +16,26 @@ class App extends React.Component {
     }
     this.updateHouseInfo = this.updateHouseInfo.bind(this)
   }
+
   updateHouseInfo(newState) {
     this.setState(newState)
   }
+
   navigateHome() {
     window.location = '/#/'
   }
+
+  playAudio() {
+    var audio = new Audio('./smb_gameover.wav')
+    audio.play();
+  }
+  
   render() {
     return (
       <HashRouter>
         <div className="App">
+        <button onClick={() => this.playAudio()}>Play</button>
+
           <header onClick={() => this.navigateHome()}>
             <h1>Hoggy Hoggy Hogwarts</h1>
             <img
