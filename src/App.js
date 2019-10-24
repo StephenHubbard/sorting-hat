@@ -5,6 +5,7 @@ import GreatHall from './components/GreatHall'
 import About from './components/About'
 import House from './components/House'
 import MissingPage from './components/404'
+import {Howl} from 'howler'
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +18,10 @@ class App extends React.Component {
     this.updateHouseInfo = this.updateHouseInfo.bind(this)
   }
 
+  componentDidMount() {
+    this.playThemeSong();
+  }
+
   updateHouseInfo(newState) {
     this.setState(newState)
   }
@@ -25,6 +30,12 @@ class App extends React.Component {
     window.location = '/#/'
   }
 
+  playThemeSong() {
+    var sound = new Howl ({
+        src: ['themeSong.mp3']
+    })
+    sound.play();
+  }
 
   
   render() {

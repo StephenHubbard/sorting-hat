@@ -13,7 +13,7 @@ const GreatHall = props => {
             {props.house ? <Link to={`/house/${props.house}`}>Common Room</Link> : null}
         </nav>
         {!props.house ? (
-            <img
+            <img className="hat"
             src="https://vignette.wikia.nocookie.net/harrypotter/images/6/62/Sorting_Hat.png/revision/latest/scale-to-width-down/2000?cb=20161120072849"
             alt="sorting hat"
             onClick={() =>
