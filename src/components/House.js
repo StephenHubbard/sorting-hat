@@ -13,8 +13,7 @@ const House = (props) => {
                 <Link to="/">Great Hall</Link>
                 <Link to="/about">History of Magic</Link>
             </nav>
-                <button className="audio" onClick={() => console.log(props.audio)}>Console Log</button>
-                <button className="audio" onClick={() => this.playAudio()}>Play Audio</button>
+                
         </>
     )
 }

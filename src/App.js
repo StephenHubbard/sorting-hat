@@ -5,7 +5,6 @@ import GreatHall from './components/GreatHall'
 import About from './components/About'
 import House from './components/House'
 import MissingPage from './components/404'
-import {Howl} from 'howler'
 
 class App extends React.Component {
   constructor() {
@@ -14,11 +13,8 @@ class App extends React.Component {
       house: null,
       mainColor: '',
       secondaryColor: '',
-      audio: '',
     }
     this.updateHouseInfo = this.updateHouseInfo.bind(this)
-    this.playAudio = this.playAudio.bind(this)
-    this.playHuffleAudio = this.playHuffleAudio.bind(this)
   }
 
   updateHouseInfo(newState) {
@@ -29,50 +25,13 @@ class App extends React.Component {
     window.location = '/#/'
   }
 
-  playGryffAudio() {
-    var sound = new Howl({
-      src: ['/gryffindor.mp4']
-    })
-    sound.play();
-  };
-  playSlythAudio() {
-    var sound = new Howl({
-      src: ['/slytherin.mp4']
-    })
-    sound.play();
-  };
-  playRavenAudio() {
-    var sound = new Howl({
-      src: ['/ravenclaw.mp4']
-    })
-    sound.play();
-  };
-  playHuffleAudio() {
-    var sound = new Howl({
-      src: ['/hufflepuff.mp4']
-    })
-    sound.play();
-    // console.log(this.state.audio)
-  };
-
-  playAudio() {
-    var sound = new Howl({
-      src: [`${this.state.audio}`]
-    })
-    sound.play();
-    console.log("played")
-  }
-
 
   
   render() {
     return (
       <HashRouter>
         <div className="App">
-        <button onClick={this.playGryffAudio}>Gryffindor</button>
-        <button onClick={this.playSlythAudio}>Slytherin</button>
-        <button onClick={this.playRavenAudio}>Ravenclaw</button>
-        <button onClick={this.playHuffleAudio}>Hufflepuff</button>
+        
           <header onClick={() => this.navigateHome()}>
             <h1>Hoggy Hoggy Hogwarts</h1>
             <img
@@ -101,7 +60,6 @@ class App extends React.Component {
                 <House
                   mainColor={this.state.mainColor}
                   secondaryColor={this.state.secondaryColor}
-                  audio={this.state.audio}
                 />
               )}
             />
